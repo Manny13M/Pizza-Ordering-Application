@@ -1,0 +1,161 @@
+﻿<Window x:Class="A2ManuelMartinez.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:A2ManuelMartinez"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <TabControl x:Name="tabControl">
+        <TabItem Header="Place Order" Foreground="Green" Background="LightBlue" x:Name="placeOrderTab" >
+            <Canvas x:Name="placeOrderPanel">
+
+                <Label Content="Pizza Size: " Canvas.Left="26" Canvas.Top="23" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <ComboBox x:Name="pizzaSizeCmbBox" Canvas.Left="110" Canvas.Top="20" RenderTransformOrigin="1.429,0.573" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <ComboBoxItem Content="None" IsSelected="True" />
+                    <ComboBoxItem Content="Small - $7.00"/>
+                    <ComboBoxItem Content="Medium - $10.00"/>
+                    <ComboBoxItem Content="Large - $13.00"/>
+                    <ComboBoxItem Content="Extra Large - $15.00"/>
+                </ComboBox>
+
+                <Label Content="Crust Type: " Canvas.Left="27" Canvas.Top="60" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <ComboBox x:Name="crustTypeCmbBox" Canvas.Left="111" Canvas.Top="62" RenderTransformOrigin="1.429,0.573">
+                    <ComboBoxItem Content="Normal" IsSelected="True" />
+                    <ComboBoxItem Content="Thin"/>
+                    <ComboBoxItem Content="Deep Dish"/>
+                </ComboBox>
+
+                <Label Content="Toppings: " Canvas.Left="26" Canvas.Top="97" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label Content="Extra $1.10 Each" Canvas.Left="26" Canvas.Top="123" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label Content="Extra $2.15 Each" Canvas.Left="180" Canvas.Top="123" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Canvas x:Name="veggiesToppingsPanel">
+                    <CheckBox Content="Pineapple"       IsChecked="False" Name="pineappleChkBox"    Canvas.Left="26" Canvas.Top="155"   HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.509,-1.287"/>
+                    <CheckBox Content="Extra Cheese"    IsChecked="False" Name="extraCheeseChkBox"  Canvas.Left="26" Canvas.Top="175"  HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.509,-1.287"/>
+                    <CheckBox Content="Dried Shrimps"   IsChecked="False" Name="driedShrimpsChkBox" Canvas.Left="26" Canvas.Top="195"  HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.509,-1.287"/>
+                    <CheckBox Content="Mushrooms"       IsChecked="False" Name="mushroomsChkBox"    Canvas.Left="26" Canvas.Top="215"  HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.509,-1.287"/>
+                    <CheckBox Content="Anchovies"       IsChecked="False" Name="anchoviesChkBox"    Canvas.Left="26" Canvas.Top="235"  HorizontalAlignment="Left"   VerticalAlignment="Top" RenderTransformOrigin="0.509,-1.287"/>
+                    <CheckBox Content="Sun Dried Tomatoes"       IsChecked="False" Name="sunDriedTomatoesChkBox"    Canvas.Left="26" Canvas.Top="255"  HorizontalAlignment="Left"   VerticalAlignment="Top" RenderTransformOrigin="0.509,-1.287"/>
+                    <CheckBox Content="Dacon"           IsChecked="False" Name="daconChkBox"        Canvas.Left="26" Canvas.Top="275"  HorizontalAlignment="Left"   VerticalAlignment="Top" RenderTransformOrigin="0.509,-1.287"/>
+                    <CheckBox Content="Spinach"         IsChecked="False" Name="spinachChkBox"      Canvas.Left="26" Canvas.Top="295"  HorizontalAlignment="Left"   VerticalAlignment="Top" RenderTransformOrigin="0.509,-1.287"/>
+                    <CheckBox Content="Roasted Garlic"  IsChecked="False" Name="roastedGarlicChkBox"    Canvas.Left="26" Canvas.Top="315"  HorizontalAlignment="Left"   VerticalAlignment="Top" RenderTransformOrigin="0.509,-1.287"/>
+                    <CheckBox Content="Jalapeno"        IsChecked="False" Name="jalapenoChkBox"     Canvas.Left="26" Canvas.Top="335"  HorizontalAlignment="Left"   VerticalAlignment="Top" RenderTransformOrigin="0.509,-1.287"/>
+                </Canvas>
+                <Canvas x:Name="meatToppingsPanel">
+                    <CheckBox Content="Ground Beef"     IsChecked="False" Name="groundBeefChkBox"     Canvas.Left="180" Canvas.Top="155"  HorizontalAlignment="Left"   VerticalAlignment="Top" RenderTransformOrigin="0.509,-1.287"/>
+                    <CheckBox Content="Shredded Chicken"        IsChecked="False" Name="shreddedChickenChkBox"     Canvas.Left="180" Canvas.Top="175"  HorizontalAlignment="Left"   VerticalAlignment="Top" RenderTransformOrigin="0.509,-1.287"/>
+                    <CheckBox Content="Grilled Chicken"         IsChecked="False" Name="grilledChickenChkBox"     Canvas.Left="180" Canvas.Top="195"  HorizontalAlignment="Left"   VerticalAlignment="Top" RenderTransformOrigin="0.509,-1.287"/>
+                    <CheckBox Content="Pepperoni"       IsChecked="False" Name="pepperoniChkBox"     Canvas.Left="180" Canvas.Top="215"  HorizontalAlignment="Left"   VerticalAlignment="Top" RenderTransformOrigin="0.509,-1.287"/>
+                    <CheckBox Content="Ham"             IsChecked="False" Name="hamChkBox"     Canvas.Left="180" Canvas.Top="235"  HorizontalAlignment="Left"   VerticalAlignment="Top" RenderTransformOrigin="0.509,-1.287"/>
+                    <CheckBox Content="Bacon"           IsChecked="False" Name="baconChkBox"     Canvas.Left="180" Canvas.Top="255"  HorizontalAlignment="Left"   VerticalAlignment="Top" RenderTransformOrigin="0.509,-1.287"/>
+                </Canvas>
+                
+
+                <Label Content="Drinks: " Canvas.Left="348" Canvas.Top="21" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.527,0.571"/>
+                <Label Content="Pops $2.99 Each. Water $1.99 Each. Enter quantity." Canvas.Left="464" Canvas.Top="18" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.527,0.571"/>
+
+                <Label Content="Coke" Canvas.Left="402" Canvas.Top="52" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="1.799,0.52"/>
+                <Label Content="Diet Coke" Canvas.Left="402" Canvas.Top="78" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.527,0.571"/>
+                <Label Content="Iced Tea" Canvas.Left="402" Canvas.Top="107" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="1.799,0.52"/>
+                <Label Content="Ginger Ale" Canvas.Left="543" Canvas.Top="52" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.527,0.571"/>
+                <Label Content="Sprite" Canvas.Left="543" Canvas.Top="78" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="1.799,0.52"/>
+                <Label Content="Root Beer" Canvas.Left="543" Canvas.Top="107" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.571,1.578"/>
+                <Label Content="Water" Canvas.Left="679" Canvas.Top="52" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.615,0.541"/>
+
+                <TextBox x:Name="cokeTxtBox" Canvas.Left="482" TextWrapping="Wrap"  Canvas.Top="56" Width="37" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBox x:Name="dietCokeTxtBox" Canvas.Left="482" TextWrapping="Wrap"  Canvas.Top="84" Width="37" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <TextBox x:Name="icedTeaTxtBox" Canvas.Left="482" TextWrapping="Wrap"  Canvas.Top="111" Width="37" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <TextBox x:Name="gingerAleTxtBox" Canvas.Left="625" TextWrapping="Wrap"  Canvas.Top="56" Width="37" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox x:Name="spriteTxtBox" Canvas.Left="625" TextWrapping="Wrap"  Canvas.Top="84" Width="37" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <TextBox x:Name="rootBeerTxtBox" Canvas.Left="625" TextWrapping="Wrap"  Canvas.Top="111" Width="37" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBox x:Name="waterTxtBox" Canvas.Left="725" TextWrapping="Wrap"  Canvas.Top="56" Width="37" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                <Canvas x:Name="otherItemsPanel">
+                    <Label Content="Other Items:" Canvas.Left="348" Canvas.Top="157" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.615,0.541"/>
+                    <Label Content="Chicken Wings" Canvas.Left="373" Canvas.Top="185" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.615,0.541"/>
+                    <ComboBox x:Name="chknWingsCmbBox" Canvas.Left="467" Canvas.Top="186" RenderTransformOrigin="1.429,0.573">
+                        <ComboBoxItem Content="None" IsSelected="True" />
+                        <ComboBoxItem Content="5 for $6.99"/>
+                        <ComboBoxItem Content="10 for $11.99"/>
+                        <ComboBoxItem Content="20 for $22.99"/>
+                    </ComboBox>
+                    <CheckBox Content="Poutine - $5.29" IsChecked="False" Name="poutineChkBox"     Canvas.Left="378" Canvas.Top="218"  HorizontalAlignment="Center"   VerticalAlignment="Top" RenderTransformOrigin="0.509,-1.287"/>
+                    <Label Content="Onion Rings" Canvas.Left="596" Canvas.Top="182" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.615,0.541"/>
+                    <ComboBox x:Name="onionRngsCmbBox" Canvas.Left="679" Canvas.Top="185" RenderTransformOrigin="1.429,0.573" HorizontalAlignment="Center" VerticalAlignment="Top">
+                        <ComboBoxItem Content="None" IsSelected="True" />
+                        <ComboBoxItem Content="Small for $3.99"/>
+                        <ComboBoxItem Content="Medium for $5.99"/>
+                    </ComboBox>
+                    <CheckBox Content="Cheesy Garlic Bread for $5.69" IsChecked="False" Name="cheesyGrlcBreadChkBox"     Canvas.Left="378" Canvas.Top="243"  HorizontalAlignment="Center"   VerticalAlignment="Top" RenderTransformOrigin="0.509,-1.287"/>
+                    <CheckBox Content="Garlic Dip for $0.50" IsChecked="False" Name="grlcDipChkBox"     Canvas.Left="596" Canvas.Top="243"  HorizontalAlignment="Left"   VerticalAlignment="Top" RenderTransformOrigin="0.509,-1.287"/>
+                    <CheckBox Content="BBQ Dip for $0.50" IsChecked="False" Name="bbqDipChkBox"     Canvas.Left="596" Canvas.Top="218"  HorizontalAlignment="Center"   VerticalAlignment="Top" RenderTransformOrigin="0.509,-1.287"/>
+                    <CheckBox Content="Sour Cream for $0.50" IsChecked="False" Name="sourCreamChkBox"     Canvas.Left="596" Canvas.Top="271"  HorizontalAlignment="Center"   VerticalAlignment="Top" RenderTransformOrigin="0.509,-1.287"/>
+                </Canvas>
+
+
+                <Button x:Name="btnConfirmOrder"  Click="btnConfirmOrder_Click" Content="Confirm Order" Canvas.Left="644" Canvas.Top="326" Height="33" Width="108" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+            </Canvas>
+        </TabItem>
+
+        <TabItem Header="Confirm Order" Foreground="Green" Background="LightBlue" x:Name="confirmOrderTab" Height="20" VerticalAlignment="Top" >
+            <Canvas>
+
+                <DataGrid Name="orderTbl" Height="384" Width="397" HorizontalAlignment="Left" VerticalAlignment="Center" />
+
+                <Label Content="Total Before Tax: " Canvas.Left="497" Canvas.Top="105" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.615,0.541"/>
+                <TextBox x:Name="amntB4TaxTxtBox" Canvas.Left="618" TextWrapping="Wrap"  IsReadOnly="True" Canvas.Top="109" Width="85" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label Content="HST/ Tax: " Canvas.Left="497" Canvas.Top="137" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.615,0.541"/>
+                <TextBox x:Name="hstTxtBox" Canvas.Left="618" TextWrapping="Wrap"  IsReadOnly="True" Canvas.Top="141" Width="85" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label Content="Total After Tax: " Canvas.Left="497" Canvas.Top="170" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.615,0.541"/>
+                <TextBox x:Name="amntTotalTxtBox" Canvas.Left="618" TextWrapping="Wrap"  IsReadOnly="True" Canvas.Top="174" Width="85" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+                <Button x:Name="orderAgainBtn" Click="orderAgainBtn_Click"  Content="Order Again" Canvas.Left="448" Canvas.Top="301" Height="31" Width="86" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button x:Name="clearOrderBtn" Click="clearOrderBtn_Click"  Content="Clear Order" Canvas.Left="564" Canvas.Top="301" Height="31" Width="88" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button x:Name="checkoutBtn"   Click="checkoutBtn_Click"    Content="Checkout" Canvas.Left="676" Canvas.Top="301" Height="33" Width="85" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            </Canvas>
+        </TabItem>
+
+        <TabItem Header="Payment" Foreground="Green" Background="LightBlue" x:Name="paymentTab" >
+            <Canvas x:Name="paymentPanel">
+                <Label Content="First Name *" Canvas.Left="136" Canvas.Top="52" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.615,0.541"/>
+                <TextBox x:Name="fnameTxtBox" Canvas.Left="229" TextWrapping="Wrap"  Canvas.Top="56" Width="85" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Label Content="Last Name *" Canvas.Left="136" Canvas.Top="83" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.584,2.367"/>
+                <TextBox x:Name="lnameTxtBox" Canvas.Left="229" TextWrapping="Wrap"  Canvas.Top="87" Width="85" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Label Content="Address *" Canvas.Left="138" Canvas.Top="114" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.701,2.938"/>
+                <TextBox x:Name="addressTxtBox" Canvas.Left="229" TextWrapping="Wrap"  Canvas.Top="118" Width="85" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Label Content="Province" Canvas.Left="135" Canvas.Top="144" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.584,2.367"/>
+                <TextBox x:Name="provinceTxtBox" Canvas.Left="229" TextWrapping="Wrap"  Canvas.Top="148" Width="85" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Label Content="City" Canvas.Left="139" Canvas.Top="174" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.584,2.367"/>
+                <TextBox x:Name="cityTxtBox" Canvas.Left="229" TextWrapping="Wrap"  Canvas.Top="178" Width="85" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Label Content="Postal Code *" Canvas.Left="138" Canvas.Top="203" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.584,2.367"/>
+                <TextBox x:Name="postalCodeTxtBox" Canvas.Left="229" TextWrapping="Wrap"  Canvas.Top="207" Width="85" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Label Content="Contact No *" Canvas.Left="138" Canvas.Top="233" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.584,2.367"/>
+                <TextBox x:Name="contactNoTxtBox" Canvas.Left="229" TextWrapping="Wrap"  Canvas.Top="237" Width="85" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Label Content="Email" Canvas.Left="139" Canvas.Top="264" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.584,2.367"/>
+                <TextBox x:Name="emailTxtBox" Canvas.Left="229" TextWrapping="Wrap"  Canvas.Top="268" Width="142" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                <Label Content="Payment Method *" Canvas.Left="394" Canvas.Top="52" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.615,0.541"/>
+                <ComboBox x:Name="paymentMthdCmbBox" Canvas.Left="514" Canvas.Top="56" RenderTransformOrigin="1.429,0.573">
+                    <ComboBoxItem Content="Cash"/>
+                    <ComboBoxItem Content="Master Card"/>
+                    <ComboBoxItem Content="Visa Card"/>
+                    <ComboBoxItem Content="Amex Card"/>
+                </ComboBox>
+                <Label Content="Card No *" Canvas.Left="397" Canvas.Top="83" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.615,0.541"/>
+                <TextBox x:Name="cardNoTxtBox" Canvas.Left="514" TextWrapping="Wrap"  Canvas.Top="87" Width="85" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Label Content="Amount Due" Canvas.Left="397" Canvas.Top="114" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.615,0.541"/>
+                <TextBox x:Name="amntDueTxtBox" Canvas.Left="514" TextWrapping="Wrap"  IsReadOnly="True" Canvas.Top="118" Width="85" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Label Content="Amount Paid *" Canvas.Left="396" Canvas.Top="144" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.615,0.541"/>
+                <TextBox x:Name="amntPaidTxtBox" TextChanged="amntPaidTxtBox_TextChanged" Canvas.Left="514" TextWrapping="Wrap"  Canvas.Top="148" Width="85" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Label Content="Change" Canvas.Left="396" Canvas.Top="174" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.615,0.541"/>
+                <TextBox x:Name="changeTxtBox" Canvas.Left="514" TextWrapping="Wrap"  Canvas.Top="178" Width="85" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                <Button x:Name="payBtn" Click="payBtn_Click" Content="Pay" Canvas.Left="544" Canvas.Top="318" Height="38" Width="93" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Button x:Name="backBtn" Click="backBtn_Click" Content="Go Back" Canvas.Left="674" Canvas.Top="317" Height="40" Width="94" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+            </Canvas>
+        </TabItem>
+
+    </TabControl>
+</Window>
